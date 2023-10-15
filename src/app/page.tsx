@@ -1,113 +1,287 @@
-import Image from 'next/image'
+import Button from '@/components/Button';
+import EducationEntry from '@/components/EducationEntry';
+import ExperienceEntry from '@/components/ExperienceEntry';
+import GlowCircle from '@/components/GlowCircle';
+import Header from '@/components/Header';
+import Project from '@/components/Project';
+import { Skill, SkillSection } from '@/components/skills';
+import { Award, GraduationCap, MapPin, PenLine, Scroll } from 'lucide-react';
+import { Metadata } from 'next';
+import Image from 'next/image';
+
+export const metadata: Metadata = {
+	title: 'Portfolio | Tyler Gennaro',
+	description: 'My personal portfolio.',
+};
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+	return (
+		<main className='max-w-screen-xl mx-auto text-lg mb-32 px-8'>
+			<section className='mt-32 w-fit mx-auto text-center relative'>
+				<div className='relative'>
+					<div className='absolute inset-0 w-full h-[110%] -z-[1] flex'>
+						<div className='bg-gradient-to-br from-secondary from-40% to-background w-full blur-[106px]' />
+						<div className='bg-gradient-to-br from-[#6F57FB] to-secondary/50 w-full blur-[106px]' />
+					</div>
+					<h1 className='fancy-text text-5xl md:text-7xl font-extrabold !leading-snug tracking-tight'>
+						Hi, I&apos;m Tyler
+					</h1>
+					<Header className='text-4xl md:text-6xl'>
+						I'm a Software Developer
+					</Header>
+				</div>
+				{/* <Button className='mt-12'>Learn about me</Button> */}
+			</section>
+			<section className='mt-64 grid grid-cols-12 gap-x-4'>
+				<div className='col-span-12 lg:col-span-6 my-auto relative'>
+					<Header>About me</Header>
+					<p className='mt-4 text-foreground-light text-lg leading-normal max-w-screen-md'>
+						I&apos;m a 4th year Computer Science student at Monmouth University
+						in West Long Branch, NJ. I taught myself how to code in high school
+						and have since turned it into a career path. I have a passion for
+						web development and a growing interest in backend development and
+						embedded systems.
+					</p>
+					<GlowCircle top={20} left={0} opacity={0.6} />
+				</div>
+				<div className='w-full max-w-xs col-span-12 lg:col-span-3 lg:col-start-10'>
+					<Image
+						src='/soccer.svg'
+						alt='soccer image'
+						width={344}
+						height={344}
+						className='w-full aspect-square'
+					/>
+				</div>
+			</section>
+			<section className='mt-64 relative'>
+				<GlowCircle top={20} left={80} percent opacity={0.5} />
+				<Header>Work Experience</Header>
+				<ExperienceEntry
+					title='Security Officer'
+					company='Cardinal Point Homeland Security Group'
+					location='Dresher, PA 19025'
+					startDate='May 2023'
+					endDate='Sep 2023'
+					description={[
+						'Provided daytime security and access control at a residential/commercial apartment complex.',
+						'Managed the front desk area, including greeting visitors, receiving packages and mail, and ensuring a welcoming environment.',
+					]}
+					className='mt-8'
+				/>
+				<ExperienceEntry
+					title='Computer Science Tutor'
+					company='Monmouth University'
+					location='West Long Branch, NJ 07764'
+					startDate='Nov 2022'
+					endDate='May 2023'
+					description={[
+						'Tutored student peers for Computer Science-related courses.',
+						'Guided students through learning content such as Java, Python, C++, Kotlin, and SQL.',
+					]}
+				/>
+				<ExperienceEntry
+					title='Instructor'
+					company='iCode of Shrewsbury'
+					location='Shrewsbury, NJ 07702'
+					startDate='Jan 2023'
+					endDate='May 2023'
+					description={[
+						'Taught students aged 5 to 15 in a classroom-style environment about topics such as web development, robotics, circuitry, drone programming, Scratch, MCreator, and Roblox Studio.',
+						'Traveled to various schools in the area to teach students in a camp-style environment.',
+					]}
+				/>
+				<ExperienceEntry
+					title='EMT Volunteer'
+					company='Bucks County Rescue Squad'
+					location='Bristol, PA 19007'
+					startDate='May 2019'
+					endDate='Jun 2020'
+					description={[
+						'Gained first-hand experience treating patients on 911 calls for services.',
+						'Treated patients with conditions varying from minor medical issues to trauma patients.',
+						'Pennsylvania Emergency Medical Technician (EMT) Certification (2019)',
+					]}
+				/>
+				<ExperienceEntry
+					title='Police Explorer Cadet Volunteer'
+					company='Lower Makefield Township Police Department'
+					location='Lower Makefield Township, PA 19067'
+					startDate='Oct 2016'
+					endDate='Jan 2023'
+					description={[
+						'Planned and supervised security at community events.',
+						'Attended and coordinated bi-weekly meetings discussing law enforcement-related topics, such as S.W.A.T. tactics, Stop The Bleed, traffic stop procedures, and search and rescue.',
+						'Promoted to Sergeant in 2018.',
+					]}
+					last
+				/>
+			</section>
+			<section className='mt-64 relative'>
+				<GlowCircle top={50} left={100} opacity={0.5} />
+				<Header>Education</Header>
+				<EducationEntry
+					lines={[
+						{
+							Icon: GraduationCap,
+							text: <span className='font-bold'>Monmouth University</span>,
+						},
+						{
+							Icon: MapPin,
+							text: '400 Cedar Avenue, West Long Branch, NJ 07764',
+						},
+						{
+							Icon: Scroll,
+							text: (
+								<span>
+									Bachelor of Science in{' '}
+									<span className='fancy-text text-lg font-bold'>
+										Computer Science
+									</span>
+								</span>
+							),
+						},
+						{
+							Icon: PenLine,
+							text: (
+								<span>
+									GPA 3.88{' '}
+									<span className='text-xs text-foreground-light'>/4.00</span>
+								</span>
+							),
+						},
+						{
+							Icon: Award,
+							text: "Dean's List 5/6 semesters",
+						},
+					]}
+					coursework={[
+						'Java',
+						'C++',
+						'Python',
+						'SQL',
+						'Networking',
+						'Perl',
+						'Ruby',
+						'Linux OS',
+					]}
+					startDate='Aug 2020'
+					endDate='May 2024'
+					className='mt-8'
+				/>
+				<EducationEntry
+					lines={[
+						{
+							Icon: GraduationCap,
+							text: (
+								<span className='font-bold'>
+									Bucks County Technical High School
+								</span>
+							),
+						},
+						{
+							Icon: MapPin,
+							text: '610 Wistar Road, Fairless Hills, PA 19030',
+						},
+						{
+							Icon: Scroll,
+							text: 'High School Diploma',
+						},
+						{
+							Icon: PenLine,
+							text: 'Studied Emergency Services',
+						},
+					]}
+					coursework={[
+						'Emergency Medical Services',
+						'Policing',
+						'Criminal Justice',
+						'Firefighting',
+					]}
+					startDate='Aug 2016'
+					endDate='Jun 2020'
+					last
+				/>
+			</section>
+			<section className='mt-64 relative'>
+				<GlowCircle top={40} left={60} percent opacity={0.5} />
+				<Header>Skills</Header>
+				<SkillSection title='Languages'>
+					<Skill name='TypeScript' level='advanced' />
+					<Skill name='C++' level='intermediate' />
+					<Skill name='Java' level='intermediate' />
+					<Skill name='Python' level='intermediate' />
+				</SkillSection>
+				<SkillSection title='Frameworks'>
+					<Skill name='Next.js' level='advanced' />
+					<Skill name='React.js' level='advanced' />
+					<Skill name='Node.js' level='advanced' />
+				</SkillSection>
+				<SkillSection title='Web Technologies'>
+					<Skill name='HTML' level='advanced' />
+					<Skill name='CSS' level='advanced' />
+					<Skill name='TailwindCSS' level='advanced' />
+				</SkillSection>
+				<SkillSection title='Databases'>
+					<Skill name='SQL' level='advanced' />
+					<Skill name='Prisma' level='advanced' />
+					<Skill name='Firebase' level='intermediate' />
+				</SkillSection>
+			</section>
+			<section className='mt-64 relative'>
+				<GlowCircle top={35} left={20} percent opacity={0.6} />
+				<Header>Projects</Header>
+				<Project
+					title='Commonwealth Metal Company'
+					description='Marketing website'
+					image='/commonwealth.jpg'
+					tools={[
+						'TypeScript',
+						'Next.js',
+						'TailwindCSS',
+						'ShadcnUI',
+						'Zod',
+						'NodeMailer',
+						'CVA',
+					]}
+					source='https://github.com/TGennnaro/common-metal'
+					demo='https://commonwealthmetal.com'
+				/>
+				<Project
+					title='Pulsate'
+					description='Inventory management application'
+					image='/pulsate.png'
+					tools={[
+						'TypeScript',
+						'Next.js',
+						'TailwindCSS',
+						'ShadcnUI',
+						'Prisma',
+						'NextAuth',
+						'Stripe',
+						'Zod',
+						'CVA',
+					]}
+					source='https://github.com/TGennnaro/lfhrs-inventory'
+					demo='https://pulsate.cloud'
+				/>
+				<Project
+					title='CourseHawk'
+					description='Professor rating database'
+					image='/coursehawk.png'
+					tools={[
+						'TypeScript',
+						'React.js',
+						'TailwindCSS',
+						'NextUI',
+						'Pocketbase',
+						'Puppeteer',
+						'RateMyProfessors API',
+					]}
+					source='https://github.com/TGennnaro/CourseHawk'
+					demo='https://coursehawk.vercel.app/'
+				/>
+			</section>
+		</main>
+	);
 }

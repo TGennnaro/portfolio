@@ -3,25 +3,83 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	@apply text-foreground;
+	@apply bg-background;
+}
+
+.fancy-text {
+	@apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+}
+
+@property --r {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}
+
+.rotating-border {
+	background: #222;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.rotating-border:hover {
+	animation: rotating 1.8s linear infinite;
+	animation-fill-mode: forwards;
+	background: conic-gradient(
+		from var(--r),
+		#222 0%,
+		theme('colors.accent') 20%,
+		#222 40%
+	);
+}
+
+.rotating-border::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	transition: inset 0.2s ease-out;
+	z-index: -1;
+	@apply bg-gradient-to-r from-[#0D072F] to-secondary;
+}
+
+.rotating-border:hover::after {
+	inset: 2px;
+}
+
+.rotating-border::before {
+	content: '';
+	inset: 0;
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.05);
+	opacity: 0;
+	transition: opacity 0.2s ease-out;
+}
+
+.rotating-border:hover::before {
+	opacity: 1;
+}
+
+@keyframes rotating {
+	0% {
+		--r: 0deg;
+	}
+	100% {
+		--r: 360deg;
+	}
 }
