@@ -27,7 +27,7 @@ export default function Home() {
 						Hi, I&apos;m Tyler
 					</h1>
 					<Header className='text-4xl md:text-6xl'>
-						I'm a Software Developer
+						I&apos;m a Software Developer
 					</Header>
 				</div>
 				{/* <Button className='mt-12'>Learn about me</Button> */}
