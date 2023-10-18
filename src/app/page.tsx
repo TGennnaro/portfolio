@@ -30,7 +30,6 @@ export default function Home() {
 						I&apos;m a Software Developer
 					</Header>
 				</div>
-				{/* <Button className='mt-12'>Learn about me</Button> */}
 			</section>
 			<section className='mt-64 grid grid-cols-12 gap-x-4'>
 				<div className='col-span-12 lg:col-span-6 my-auto relative'>
@@ -55,7 +54,7 @@ export default function Home() {
 				</div>
 			</section>
 			<section className='mt-64 relative'>
-				<GlowCircle top={20} left={80} percent opacity={0.5} />
+				<GlowCircle top={20} right={0} percent opacity={0.5} />
 				<Header>Work Experience</Header>
 				<ExperienceEntry
 					title='Security Officer'
@@ -204,7 +203,7 @@ export default function Home() {
 				/>
 			</section>
 			<section className='mt-64 relative'>
-				<GlowCircle top={40} left={60} percent opacity={0.5} />
+				<GlowCircle top={40} right={0} percent opacity={0.5} />
 				<Header>Skills</Header>
 				<SkillSection title='Languages'>
 					<Skill name='TypeScript' level='advanced' />
