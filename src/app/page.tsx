@@ -56,6 +56,7 @@ export default function Home() {
 						<a href='mailto:tylergennaro10@gmail.com' className='underline'>
 							tylergennaro10@gmail.com
 						</a>
+						.
 					</p>
 					<GlowCircle top={20} left={0} opacity={0.6} />
 				</div>
