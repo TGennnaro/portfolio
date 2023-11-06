@@ -10,6 +10,7 @@ export default function Project({
 	tools,
 	source,
 	demo,
+	unfinished = false,
 }: {
 	title: string;
 	description: string;
@@ -17,6 +18,7 @@ export default function Project({
 	tools: string[];
 	source: string;
 	demo: string;
+	unfinished?: boolean;
 }) {
 	return (
 		<div className='bg-[rgba(255,255,255,0.04)] rounded-xl border border-zinc-800 p-4 flex lg:flex-row flex-col gap-8 mt-8'>
@@ -27,7 +29,7 @@ export default function Project({
 				height={230}
 				className='rounded-xl'
 			/>
-			<div className='flex flex-col'>
+			<div className='flex flex-col w-full'>
 				<span className='font-bold leading-normal'>{title}</span>
 				<span className='leading-normal mt-2'>{description}</span>
 				<ul className='flex gap-3 flex-wrap my-6'>
@@ -37,7 +39,7 @@ export default function Project({
 						</li>
 					))}
 				</ul>
-				<div className='mt-auto flex gap-1'>
+				<div className='mt-auto flex gap-1 items-center'>
 					<Link
 						href={source}
 						target='_blank'
@@ -52,6 +54,11 @@ export default function Project({
 					>
 						<Radio className='w-8 h-8' />
 					</Link>
+					{unfinished && (
+						<span className='ml-auto text-sm text-foreground-light'>
+							Unfinished
+						</span>
+					)}
 				</div>
 			</div>
 		</div>
