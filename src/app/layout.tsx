@@ -24,7 +24,7 @@ export default function RootLayout({
 				{children}
 				<footer className='py-4 text-center text-foreground-light'>
 					{/* <span>Made with 💖 by Me © 2023</span> */}
-					<span>Powered by Me © 2023</span>
+					<span>Powered by Me © {new Date().getFullYear()}</span>
 					<span className='mx-2'>•</span>
 					<Link href='https://github.com' className='underline'>
 						Source Code
