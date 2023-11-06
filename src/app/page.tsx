@@ -24,7 +24,7 @@ export default function Home() {
 						<div className='bg-gradient-to-br from-[#6F57FB] to-secondary/50 w-full blur-[106px]' />
 					</div>
 					<h1 className='fancy-text text-5xl md:text-7xl font-extrabold !leading-snug tracking-tight'>
-						Hi, I&apos;m Tyler
+						Hey, I&apos;m Tyler
 					</h1>
 					<Header className='text-4xl md:text-6xl'>
 						I&apos;m a Software Developer
@@ -36,10 +36,26 @@ export default function Home() {
 					<Header>About me</Header>
 					<p className='mt-4 text-foreground-light text-lg leading-normal max-w-screen-md'>
 						I&apos;m a 4th year Computer Science student at Monmouth University
-						in West Long Branch, NJ. I taught myself how to code in high school
-						and have since turned it into a career path. I have a passion for
-						web development and a growing interest in backend development and
-						embedded systems.
+						in West Long Branch, NJ. I have a passion for full-stack web
+						development, particularly with Next.js. I&apos;m also interested in
+						backend and embedded systems. When I&apos;m not coding, you can find
+						me on the soccer field!
+					</p>
+					<p className='mt-4 text-foreground-light text-lg leading-normal max-w-screen-md'>
+						I started coding in 2016 by learning Lua. I followed tutorials from
+						YouTube and started building my own projects. I then moved to Java,
+						which is when I started taking college courses. Now, I have worked
+						with a variety of languages and frameworks, including TypeScript,
+						C++, and Next.js.
+					</p>
+					<p className='mt-4 text-foreground-light text-lg leading-normal max-w-screen-md'>
+						My goal is to continue improving my front-end design skills and to
+						work as a full-stack web developer. I&apos;m currently looking for a
+						full-time position starting May 2024. If you&apos;re interested in
+						my work, feel free to reach out to me at{' '}
+						<a href='mailto:tylergennaro10@gmail.com' className='underline'>
+							tylergennaro10@gmail.com
+						</a>
 					</p>
 					<GlowCircle top={20} left={0} opacity={0.6} />
 				</div>
@@ -53,7 +69,7 @@ export default function Home() {
 					/>
 				</div>
 			</section>
-			<section className='mt-64 relative'>
+			<section className='mt-64 relative scroll-m-28' id='experience'>
 				<GlowCircle top={20} right={0} percent opacity={0.5} />
 				<Header>Work Experience</Header>
 				<ExperienceEntry
@@ -116,7 +132,7 @@ export default function Home() {
 					last
 				/>
 			</section>
-			<section className='mt-64 relative'>
+			<section className='mt-64 relative scroll-m-28' id='education'>
 				<GlowCircle top={50} left={100} opacity={0.5} />
 				<Header>Education</Header>
 				<EducationEntry
@@ -202,7 +218,7 @@ export default function Home() {
 					last
 				/>
 			</section>
-			<section className='mt-64 relative'>
+			<section className='mt-64 relative scroll-m-28' id='skills'>
 				<GlowCircle top={40} right={0} percent opacity={0.5} />
 				<Header>Skills</Header>
 				<SkillSection title='Languages'>
@@ -227,9 +243,37 @@ export default function Home() {
 					<Skill name='Firebase' level='intermediate' />
 				</SkillSection>
 			</section>
-			<section className='mt-64 relative'>
+			<section className='mt-64 relative scroll-m-28' id='projects'>
 				<GlowCircle top={35} left={20} percent opacity={0.6} />
 				<Header>Projects</Header>
+				<Project
+					title='DevsList'
+					description='Employment platform for developers'
+					image='/devslist.png'
+					tools={[
+						'TypeScript',
+						'Next.js',
+						'TailwindCSS',
+						'NextUI',
+						'Vercel Postgres',
+						'Vercel Blob',
+						'Drizzle ORM',
+						'NextAuth',
+						'React Query',
+						'Zod',
+					]}
+					source='https://github.com/TGennnaro/devslist'
+					demo='https://devslist.vercel.app'
+					unfinished
+				/>
+				<Project
+					title='Portfolio'
+					description='Personal portfolio (this site)'
+					image='/portfolio.png'
+					tools={['TypeScript', 'Next.js', 'TailwindCSS']}
+					source='https://github.com/TGennnaro/portfolio'
+					demo='https://tgennaro.com'
+				/>
 				<Project
 					title='Commonwealth Metal Company'
 					description='Marketing website'
