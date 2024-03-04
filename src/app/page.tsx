@@ -242,7 +242,7 @@ export default function Home() {
 				<SkillSection title='Databases'>
 					<Skill name='SQL' level='advanced' />
 					<Skill name='Prisma ORM' level='advanced' />
-					<Skill name='Drizzle ORM' level='intermediate' />
+					<Skill name='Drizzle ORM' level='advanced' />
 				</SkillSection>
 			</section>
 			<section className='mt-64 relative scroll-m-28' id='projects'>
