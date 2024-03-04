@@ -224,9 +224,10 @@ export default function Home() {
 				<Header>Skills</Header>
 				<SkillSection title='Languages'>
 					<Skill name='TypeScript' level='advanced' />
+					<Skill name='HTML' level='advanced' />
+					<Skill name='CSS' level='advanced' />
 					<Skill name='C++' level='intermediate' />
-					<Skill name='Java' level='intermediate' />
-					<Skill name='Python' level='intermediate' />
+					<Skill name='Lua' level='intermediate' />
 				</SkillSection>
 				<SkillSection title='Frameworks'>
 					<Skill name='Next.js' level='advanced' />
@@ -234,14 +235,14 @@ export default function Home() {
 					<Skill name='Node.js' level='advanced' />
 				</SkillSection>
 				<SkillSection title='Web Technologies'>
-					<Skill name='HTML' level='advanced' />
-					<Skill name='CSS' level='advanced' />
 					<Skill name='TailwindCSS' level='advanced' />
+					<Skill name='REST' level='advanced' />
+					<Skill name='Sass' level='intermediate' />
 				</SkillSection>
 				<SkillSection title='Databases'>
 					<Skill name='SQL' level='advanced' />
-					<Skill name='Prisma' level='advanced' />
-					<Skill name='Firebase' level='intermediate' />
+					<Skill name='Prisma ORM' level='advanced' />
+					<Skill name='Drizzle ORM' level='intermediate' />
 				</SkillSection>
 			</section>
 			<section className='mt-64 relative scroll-m-28' id='projects'>
